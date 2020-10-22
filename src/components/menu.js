@@ -2,13 +2,14 @@ import React, {Component} from "react";
 import Seminar from "./seminar";
 
 export default class Menu extends Component{
+    constructor(){
+        super();
+        this.state = {seminars: [{name: "hej"}]}
+    }
 render(){
     return (
         <div className="menu">
-            <Seminar name="Hej" className="menu-li"></Seminar>
-            <Seminar name="då" className="menu-li"></Seminar>
-            <Seminar name="bajs" className="menu-li"></Seminar>
-            <Seminar name="farväl" className="menu-li"></Seminar>
+            {this.state.seminars.map(item => (<Seminar name={item.name} className="menu-li"></Seminar>))}
          </div> 
  );
     }
