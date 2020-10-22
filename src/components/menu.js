@@ -6,6 +6,14 @@ export default class Menu extends Component{
         super();
         this.state = {seminars: [{name: "hej"}]}
     }
+    componentDidMount(){
+        this.fetchSeminars();
+    }
+    fetchSeminars(){
+        fetch("https://localhost:44318/seminar")
+        .then((response) => response.json())
+        .then((json) => this.setState({seminars: json}))
+    }
 render(){
     return (
         <div className="menu">
