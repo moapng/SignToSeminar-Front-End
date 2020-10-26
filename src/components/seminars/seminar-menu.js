@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import Seminar from "./seminar";
+import Seminar from "./seminar-item";
 
 export default class Menu extends Component{
     constructor(){
         super();
-        this.state = {seminars: [{name: "hej"}]}
+        this.state = {seminars: []}
     }
     componentDidMount(){
         this.fetchSeminars();
