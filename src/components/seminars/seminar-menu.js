@@ -17,6 +17,7 @@ export default class Menu extends Component{
 render(){
     return (
         <div className="menu">
+            
             {this.state.seminars.map(item => (<Seminar name={item.name} className="menu-li"></Seminar>))}
          </div> 
  );

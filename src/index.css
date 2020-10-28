@@ -9,24 +9,29 @@ font-size: 40px;
 font-weight: normal;
 color: white;
 text-shadow: 2px 2px 6px black;
+padding-top:40px;
 }
 
 .menu {
     background-color: #333;
-    width: 300px;
+    width: 500px;
     box-shadow: 1px 2px 6px black;
 }
 
 .menu-li {
     list-style-type: none;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
-    padding: 10px;
+    padding: 13px;
 }
     .menu-li:hover {
         background-color: #151515;
         cursor: pointer;
     }
+
+.menu-li-info {
+padding:10px;
+}
 
 
 
@@ -43,10 +48,11 @@ text-shadow: 2px 2px 6px black;
 
 .nav-li {
     display: inline-block;
-    padding: 20px 30px;
+    padding: 10px 30px;
 }
 
     .nav-li:hover{
     background-color:#151515;
     cursor: pointer;
     }
+

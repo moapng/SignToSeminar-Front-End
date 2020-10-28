@@ -4,7 +4,6 @@ import "./index.css";
 
 import Body from "./components/body"
 import Menu from "./components/seminars/seminar-menu";
-import Seminar from "./components/seminars/seminar-item";
 import NavMenu from "./components/navigation/nav-menu";
 import NavItem from "./components/navigation/nav-item";
 import MainPage from "./components/pages/mainpage";
@@ -23,16 +22,17 @@ export default class App extends Component{
     return(
         <>
         <NavMenu onClick={(itemName) => this.setState({ itemClickedOn: itemName })}>
-            <NavItem name="Hem" className="nav-li"/>
+            <NavItem name="Hem" className="nav-li" />
             <NavItem name="Logga in" className="nav-li" />
+            <NavItem name="Profil" className="nav-li" />
             <NavItem name="FAQ" className="nav-li" />
         </NavMenu>
         <Body pageToShow={this.state.itemClickedOn}>
-            <MainPage name="Hem"/>
-            <SeminarPage name="Seminar"/>
-            <LoginPage name="Logga in"/>
-            <ProfilePage name="Profil"/>
-            <FaqPage name="FAQ"/>
+            <MainPage name="Hem" />
+            <SeminarPage name="Seminar" />
+            <LoginPage name="Logga in" />
+            <ProfilePage name="Profil" />
+            <FaqPage name="FAQ" />
         </Body>
         </>
     );
