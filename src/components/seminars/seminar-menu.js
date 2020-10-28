@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import Seminar from "./seminar-item";
 
 export default class Menu extends Component{
-    constructor(){
-        super();
-        this.state = {seminars: []}
+    constructor(props){
+        super(props);
+        this.state = {seminars: []};
     }
     componentDidMount(){
         this.fetchSeminars();
@@ -17,8 +17,12 @@ export default class Menu extends Component{
 render(){
     return (
         <div className="menu">
-            
-            {this.state.seminars.map(item => (<Seminar name={item.name} className="menu-li"></Seminar>))}
+            {this.state.seminars.map((item) => (
+            <Seminar 
+            clickCallBack={this.props.clickCallBack}
+            item={item} 
+            className="menu-li" >
+            </Seminar>))}
          </div> 
  );
     }

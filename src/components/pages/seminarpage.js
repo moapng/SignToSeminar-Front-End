@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import Seminar from "../seminars/seminar-item";
 
 export default class SeminarPage extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
+        const { name, description, date } = this.props.item.item;
         return (
             <>
-            <div>
-                <Seminar name={this.item.props.name} description={this.item.props.description} date={this.item.props.date} className="menu-li"></Seminar>
-            </div>
-            <div className="menu-li-info">Beskrivning: {this.props.description}</div> 
-            <div className="menu-li-info">När: {this.props.date}</div> 
+            <h3>{name}</h3>
+            <div className="menu-li-info">Beskrivning: {description}</div> 
+            <div className="menu-li-info">När: {date}</div> 
             </>
         );
     }

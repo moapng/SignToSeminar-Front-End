@@ -14,9 +14,9 @@ import FaqPage from "./components/pages/faqpage";
 
 
 export default class App extends Component{
-    constructor(){
-        super();
-        this.state = { itemClickedOn: "" }
+    constructor(props){
+        super(props);
+        this.state = { itemClickedOn: "", item: null };
     }
     render(){
     return(
@@ -28,8 +28,8 @@ export default class App extends Component{
             <NavItem name="FAQ" className="nav-li" />
         </NavMenu>
         <Body pageToShow={this.state.itemClickedOn}>
-            <MainPage name="Hem" />
-            <SeminarPage name="Seminar" />
+            <MainPage clickCallBack={this.onClick} name="Hem" />
+            <SeminarPage name="Seminar" item={this.state.item}/>
             <LoginPage name="Logga in" />
             <ProfilePage name="Profil" />
             <FaqPage name="FAQ" />
@@ -37,4 +37,9 @@ export default class App extends Component{
         </>
     );
 }
+
+onClick = (item) => {
+    
+    this.setState({ itemClickedOn: "Seminar", item: { item } });
+};
 }

@@ -6,7 +6,7 @@ export default class MainPage extends Component {
     render() {
         return (
             <div>
-                <Menu />
+                <Menu clickCallBack={this.props.clickCallBack} />
             </div>
         );
     }
