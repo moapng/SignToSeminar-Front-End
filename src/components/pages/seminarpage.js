@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class SeminarPage extends Component {
     constructor(props){
         super(props);
-        this.state = {emailAdress: ''};
+        this.state = {userEmail: ''};
     }
     componentDidMount(){
         this.registerToSeminar();
@@ -14,7 +14,7 @@ export default class SeminarPage extends Component {
         {
             method: 'POST',
             body: JSON.stringify({
-            emailAdress: this.state.emailAdress
+            userEmail: this.state.userEmail
             }),
             headers: { 'Content-type': 'application/json; charset=UTF-8'}
         });
