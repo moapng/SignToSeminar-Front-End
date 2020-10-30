@@ -11,7 +11,6 @@ import SeminarPage from "./components/pages/seminarpage";
 import LoginPage from "./components/pages/loginpage";
 import ProfilePage from "./components/pages/profilepage";
 import FaqPage from "./components/pages/faqpage";
-import RegisteredPage from "./components/pages/registeredpage";
 
 
 export default class App extends Component{
@@ -27,7 +26,6 @@ export default class App extends Component{
             <NavItem name="Logga in" className="nav-li" />
             <NavItem name="Profil" className="nav-li" />
             <NavItem name="FAQ" className="nav-li" />
-            <NavItem name="Anmäld" className="nav-li" />
         </NavMenu>
         <Body pageToShow={this.state.itemClickedOn}>
             <MainPage clickCallBack={(item) => this.setState({ itemClickedOn: "Seminar", item: { item } })} name="Hem" />
@@ -35,7 +33,6 @@ export default class App extends Component{
             <LoginPage name="Logga in" />
             <ProfilePage name="Profil" />
             <FaqPage name="FAQ" />
-            <RegisteredPage name="Anmäld" />
         </Body>
         </>
     );

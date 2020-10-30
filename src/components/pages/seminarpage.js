@@ -9,12 +9,13 @@ export default class SeminarPage extends Component {
         
     }
     registerToSeminar(){
-        
+        const { id } = this.props.item.item;
         fetch('https://localhost:44318/userSeminar',
         {
+            
             method: 'POST',
             body: JSON.stringify({
-            id:this.id,
+            seminarId:id,
             userEmail: this.state.userEmail
             }),
             headers: { 'Content-type': 'application/json; charset=UTF-8'}
@@ -25,7 +26,7 @@ export default class SeminarPage extends Component {
         const { name, description, date, id } = this.props.item.item;
         return (
             <div className="menu">
-            <h3 className="menu-li-info">{name}</h3>
+            <h3 className="menu-li-info">{name} - {id}</h3>
             <div className="menu-li-info"><b>Beskrivning:</b> {description}</div> 
             <div className="menu-li-info"><b>När:</b> {date}</div> 
             
